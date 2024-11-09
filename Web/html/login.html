@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link href="../img/IC-01.png" rel="icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../FontAwesome/css/all.min.css">
+</head>
+<body>
+    <div class="login-container">
+        <img src="../img/LG-01.png" alt="Logo" class="logo">
+        <form action="#">
+            <div class="input-group">
+                <i class="fas fa-user"></i>
+                <input type="text" placeholder="Username" required>
+            </div>
+            <div class="input-group">
+                <i class="fas fa-lock"></i>
+                <input type="password" placeholder="Password" required>
+            </div>
+            <button type="submit" class="login-btn">Login</button>
+        </form>
+        <p class="register-link">Belum punya akun? <a href="daftar.html">Daftar di sini</a></p>
+    </div>
+
+    <div id="login-success" class="login-success">
+        <i class="fas fa-check-circle"></i>
+        <p>Login Berhasil!</p>
+    </div>
+
+    <div id="login-error" class="login-error">
+        <i class="fas fa-times-circle"></i>
+        <p>Username atau Password Salah!</p>
+    </div>
+
+    <script src="../javascript/file.js"></script>
+</body>
+</html>
