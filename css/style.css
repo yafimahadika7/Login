@@ -1,0 +1,229 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Kanit", serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url("../img/BG-01.jpg") no-repeat center center fixed;
+    background-size: cover;
+}
+
+/* Animasi fade-in */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.login-container {
+    width: 100%;
+    max-width: 350px;
+    padding: 2rem;
+    background-color: rgba(255, 255, 255, 0.6);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    text-align: center;
+    opacity: 0;
+    animation: fadeIn 0.8s ease forwards;
+    animation-delay: 0.5s; /* Container muncul setelah 0.5 detik */
+}
+
+.logo {
+    width: 100px;
+    height: auto;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0;
+    animation: fadeIn 0.8s ease forwards;
+    animation-delay: 0.2s; /* Logo muncul lebih awal */
+}
+
+h2 {
+    margin-bottom: 1.5rem;
+    color: #333;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 1.5rem;
+    opacity: 0;
+    animation: fadeIn 0.8s ease forwards;
+}
+
+.input-group:nth-child(1) {
+    animation-delay: 0.6s; /* Field Username muncul setelah 0.6 detik */
+}
+
+.input-group:nth-child(2) {
+    animation-delay: 0.8s; /* Field Password muncul setelah 0.8 detik */
+}
+
+.input-group i {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    color: #888;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 0.75rem 1rem 0.75rem 2.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+    border-color: #3b82f6;
+    outline: none;
+}
+
+.login-btn {
+    width: 100%;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 20px;
+    background-color: #3b82f6;
+    color: #ffffff;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    opacity: 0;
+    animation: fadeIn 0.8s ease forwards;
+    animation-delay: 1s; /* Tombol Login muncul setelah 1 detik */
+}
+
+.login-btn:hover {
+    background-color: #2563eb;
+}
+
+.register-link {
+    margin-top: 1rem;
+    color: #666;
+    font-size: 0.9rem;
+    opacity: 0;
+    animation: fadeIn 0.8s ease forwards;
+    animation-delay: 1.2s; /* Link register muncul setelah 1.2 detik */
+}
+
+.register-link a {
+    color: #3b82f6;
+    text-decoration: none;
+}
+
+.register-link a:hover {
+    text-decoration: underline;
+}
+
+.login-success,
+.login-error {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    padding: 1.5rem 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    font-size: 1.1rem;
+    z-index: 10;
+}
+
+.login-success {
+    background-color: #4caf50;
+}
+
+.login-error {
+    background-color: #f44336;
+}
+
+.login-success i,
+.login-error i {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: white;
+}
+
+.daftar-container {
+    width: 100%;
+    max-width: 350px;
+    padding: 2rem;
+    background-color: rgba(255, 255, 255, 0.6);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    text-align: center;
+    opacity: 0;
+    animation: fadeIn 0.8s ease forwards;
+    animation-delay: 0.5s; /* Container muncul setelah 0.5 detik */
+}
+
+.register-btn {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 20px;
+    background-color: #3b82f6;
+    color: #ffffff;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    opacity: 0;
+    animation: fadeIn 0.8s ease forwards;
+    animation-delay: 1s; /* Tombol Login muncul setelah 1 detik */
+}
+
+.register-btn:hover {
+    background-color: #2563eb;
+}
+
+.register-success,
+.register-error {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    padding: 1.5rem 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    font-size: 1.1rem;
+    z-index: 10;
+}
+
+.register-success {
+    background-color: #4caf50;
+}
+
+.register-error {
+    background-color: #f44336;
+}
+
+.register-success i,
+.register-error i {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: white;
+}
+
