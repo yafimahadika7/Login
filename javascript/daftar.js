@@ -1,30 +1,44 @@
-function validateForm() {
+async function validateForm() {
     const fullname = document.getElementById("fullname").value;
     const username = document.getElementById("username").value;
     const password = document.getElementById("password").value;
 
-    console.log("Fullname:", fullname);
-    console.log("Username:", username);
-    console.log("Password:", password);
-
+    // Validasi username: tidak boleh ada spasi atau simbol
     const usernamePattern = /^[a-zA-Z0-9]+$/;
-
     if (!usernamePattern.test(username)) {
         showError("Username tidak boleh mengandung spasi atau simbol!");
         return false;
     }
 
-    let users = JSON.parse(localStorage.getItem("users")) || [];
+    // Validasi fullname dan password tidak kosong
+    if (fullname.trim() === "" || password.trim() === "") {
+        showError("Fullname dan Password tidak boleh kosong!");
+        return false;
+    }
 
-    const newUser = { fullname: fullname, username: username, password: password };
+    // Kirim data ke server menggunakan POST
+    try {
+        const response = await fetch("http://104.199.202.44:3000/api/register", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ fullname, username, password }),
+        });
 
-    users.push(newUser);
+        if (!response.ok) {
+            const error = await response.text();
+            showError(`Gagal mendaftar: ${error}`);
+            return false;
+        }
 
-    localStorage.setItem("users", JSON.stringify(users));
+        // Jika berhasil, tampilkan pesan sukses dan redirect
+        showSuccess("Pendaftaran Berhasil!");
+    } catch (error) {
+        showError(`Error: ${error.message}`);
+    }
 
-    showSuccess("Pendaftaran Berhasil!");
-    console.log("Data tersimpan di localStorage");
-    return false;
+    return false; // Mencegah reload form
 }
 
 function showSuccess(message) {
