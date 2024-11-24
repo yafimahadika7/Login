@@ -34,7 +34,7 @@ function showSuccess(message) {
 
     setTimeout(() => {
         successMessage.style.display = "none";
-        window.location.href = "login.html";
+        window.location.href = "index.html";
     }, 3000);
 }
 
