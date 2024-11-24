@@ -14,7 +14,7 @@ document.querySelector("form").addEventListener("submit", function(event) {
 
         setTimeout(() => {
             successNotification.style.display = "none";
-            window.location.href = "/Web/html/logout.html";
+            window.location.href = "logout.html";
         }, 2000);
     } else {
         const errorNotification = document.getElementById("login-error");
