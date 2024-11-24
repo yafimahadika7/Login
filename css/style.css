@@ -75,7 +75,7 @@ h2 {
 .input-group i {
     position: absolute;
     top: 50%;
-    left: 10px;
+    left: 15px;
     transform: translateY(-50%);
     color: #888;
 }
